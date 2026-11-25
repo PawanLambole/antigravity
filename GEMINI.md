@@ -39,27 +39,22 @@ These rules apply globally across ALL projects, workspaces, and coding sessions 
 
 ---
 
+
+
 ## 4. Living Project Analysis & Fast-Context Execution Protocol
-- **MANDATORY CONSULT FIRST**: Whenever the user requests any change, new feature, bug fix, or code update in ANY project:
-  - You MUST first check for and read `PROJECT_ANALYSIS.md` (or equivalent architecture memory map) at the root of the project.
-  - Use this document to instantly identify the affected architectural layers, exact file paths, schemas, API contracts, and dependencies.
-  - Do NOT spend multiple turns blindly searching, grepping, or crawling unrelated directories.
+- **MANDATORY CONSULT FIRST**: When starting work in a project or touching an unfamiliar module:
+  - First check for and read `PROJECT_ANALYSIS.md` (or equivalent architecture map) at the repository root to locate affected layers, file paths, schemas, and invariants without redundant directory crawling.
 - **MANDATORY CREATION IF MISSING**:
-  - If `PROJECT_ANALYSIS.md` does not exist in the project, you MUST create it immediately during the first interaction.
-  - It must contain: Project Overview, Tech Stack, Architecture Layer Map (with exact file paths), Active Services / Features Matrix, Invariants & Security Rules, and Recent Changes Changelog.
-- **MANDATORY CONTINUOUS UPDATING**:
-  - Whenever you modify code, add new endpoints, introduce migrations, configure new services, or alter UI components:
-  - You MUST update `PROJECT_ANALYSIS.md` before finishing the turn so it always mirrors the real-time project state and keeps future tasks ultra-fast.
+  - If `PROJECT_ANALYSIS.md` does not exist, create it concisely with: Project Overview, Tech Stack, Architecture Layer Map, Active Features Matrix, Invariants & Security Rules, and a brief Recent Changes section.
+- **TARGETED UPDATING (KEEP COMPACT, NO BLOAT)**:
+  - Update `PROJECT_ANALYSIS.md` **only when architecture, file paths, routes/endpoints, DB schema, dependencies, or invariants change** â€” skip editing it for minor UI/copy tweaks or small bug fixes.
+  - Keep `Recent Changes` **capped at the latest 5â€“7 milestone entries** (prune/summarize older entries instead of appending indefinitely; full history lives in `git log`) so the entire file stays under ~200 lines.
 
 ---
 
-## 5. Pre-Execution Change Preview Protocol (Short Summary First)
-- **MANDATORY SHORT PREVIEW**: Before modifying, creating, or deleting ANY file(s) across ANY project:
-  - Antigravity MUST first explicitly state a concise, short preview of what changes it is about to make:
-    1. **Target Files**: Exact file paths to be modified or created.
-    2. **What Will Change**: A brief 1–3 bullet-point summary of the edits or additions.
-    3. **Purpose**: The expected outcome or behavior of the changes.
-  - This guarantees the user has immediate visibility and clarity before any file on disk is altered.
-
-
+## 5. Pre-Execution Change Preview Protocol (Smart Approval Gate)
+- **WHEN PREVIEW + APPROVAL IS REQUIRED**: Before creating/deleting files, modifying DB schemas/APIs, installing dependencies, or performing multi-file feature/refactor edits:
+  1. State a concise preview: **Target Files**, **What Will Change** (1â€“3 bullets), and **Purpose**.
+  2. Pause and ask: *"Would you like me to create a detailed plan first, or proceed directly with these changes?"* and wait for user confirmation.
+- **DIRECT BUG FIX EXCEPTION**: When the user explicitly asks to fix a specific runtime error, crash, or broken behavior they just reported (e.g., `"fix this error"`, `"fix it"`), apply the minimal safe fix and verify it immediately without an extra confirmation round-trip.
 
