@@ -47,14 +47,14 @@ These rules apply globally across ALL projects, workspaces, and coding sessions 
 - **MANDATORY CREATION IF MISSING**:
   - If `PROJECT_ANALYSIS.md` does not exist, create it concisely with: Project Overview, Tech Stack, Architecture Layer Map, Active Features Matrix, Invariants & Security Rules, and a brief Recent Changes section.
 - **TARGETED UPDATING (KEEP COMPACT, NO BLOAT)**:
-  - Update `PROJECT_ANALYSIS.md` **only when architecture, file paths, routes/endpoints, DB schema, dependencies, or invariants change** â€” skip editing it for minor UI/copy tweaks or small bug fixes.
-  - Keep `Recent Changes` **capped at the latest 5â€“7 milestone entries** (prune/summarize older entries instead of appending indefinitely; full history lives in `git log`) so the entire file stays under ~200 lines.
+  - Update `PROJECT_ANALYSIS.md` **only when architecture, file paths, routes/endpoints, DB schema, dependencies, or invariants change** — skip editing it for minor UI/copy tweaks or small bug fixes.
+  - Keep `Recent Changes` **capped at the latest 5–7 milestone entries** (prune/summarize older entries instead of appending indefinitely; full history lives in `git log`) so the entire file stays under ~200 lines.
 
 ---
 
 ## 5. Pre-Execution Change Preview Protocol (Smart Approval Gate)
 - **WHEN PREVIEW + APPROVAL IS REQUIRED**: Before creating/deleting files, modifying DB schemas/APIs, installing dependencies, or performing multi-file feature/refactor edits:
-  1. State a concise preview: **Target Files**, **What Will Change** (1â€“3 bullets), and **Purpose**.
+  1. State a concise preview: **Target Files**, **What Will Change** (1–3 bullets), and **Purpose**.
   2. Pause and ask: *"Would you like me to create a detailed plan first, or proceed directly with these changes?"* and wait for user confirmation.
 - **DIRECT BUG FIX EXCEPTION**: When the user explicitly asks to fix a specific runtime error, crash, or broken behavior they just reported (e.g., `"fix this error"`, `"fix it"`), apply the minimal safe fix and verify it immediately without an extra confirmation round-trip.
 
