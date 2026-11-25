@@ -39,8 +39,6 @@ These rules apply globally across ALL projects, workspaces, and coding sessions 
 
 ---
 
-
-
 ## 4. Living Project Analysis & Fast-Context Execution Protocol
 - **MANDATORY CONSULT FIRST**: When starting work in a project or touching an unfamiliar module:
   - First check for and read `PROJECT_ANALYSIS.md` (or equivalent architecture map) at the repository root to locate affected layers, file paths, schemas, and invariants without redundant directory crawling.
@@ -52,9 +50,7 @@ These rules apply globally across ALL projects, workspaces, and coding sessions 
 
 ---
 
-## 5. Pre-Execution Change Preview Protocol (Smart Approval Gate)
-- **WHEN PREVIEW + APPROVAL IS REQUIRED**: Before creating/deleting files, modifying DB schemas/APIs, installing dependencies, or performing multi-file feature/refactor edits:
+## 5. Pre-Execution Change Preview Protocol (Mandatory Approval Gate)
+- **MANDATORY PREVIEW & APPROVAL EVERY TIME**: Before modifying, creating, or deleting ANY file(s), changing DB schemas/APIs, or installing dependencies across ANY project (including single-file updates and bug fixes, unless the user explicitly instructs to apply changes immediately without asking):
   1. State a concise preview: **Target Files**, **What Will Change** (1–3 bullets), and **Purpose**.
-  2. Pause and ask: *"Would you like me to create a detailed plan first, or proceed directly with these changes?"* and wait for user confirmation.
-- **DIRECT BUG FIX EXCEPTION**: When the user explicitly asks to fix a specific runtime error, crash, or broken behavior they just reported (e.g., `"fix this error"`, `"fix it"`), apply the minimal safe fix and verify it immediately without an extra confirmation round-trip.
-
+  2. Pause and ask: *"Would you like me to create a detailed plan first, or proceed directly with these changes?"* and wait for user confirmation before altering any file on disk.
