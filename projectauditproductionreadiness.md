@@ -133,7 +133,7 @@ Do not change application behavior.
 
 ---
 
-## 9. Build & Quality Verification
+## 9. Build, Lockfile & Cloud Deployment Verification
 
 Ensure:
 
@@ -143,6 +143,9 @@ Ensure:
 - No missing imports
 - No unused dependencies
 - No compilation errors
+- **Lockfile & CI Install Parity:** Run `npm ci --dry-run --include=dev` (or package-manager equivalent) to confirm `package-lock.json` is strictly in sync with all `package.json` / workspace manifests so fresh cloud builds (EAS / Render / Vercel) do not fail with `EUSAGE`.
+- **Mobile Production Bundle Dry-Run:** For Expo / React Native apps, run `npx expo export --platform android` (and/or `ios`) to verify Metro/Hermes bundling, and verify `app.json` / `eas.json` / `google-services.json` assets, `package`/`bundleIdentifier`, `version`/`versionCode`, and update channels.
+- **Cloud Environment & Live Endpoint Verification:** Verify cloud env vars (e.g. `eas env:list --environment production`, Render/Vercel env configs) match the active production URLs with no stale/`localhost` fallbacks; confirm third-party SDKs (e.g. Razorpay, Firebase, Resend) guard against missing keys at startup instead of crashing the server; and probe live deployed endpoints (`/health` plus core `/api/*` routes) to confirm the latest commit is actually running (`200 OK`, not `404`/boot-looping).
 
 ---
 
