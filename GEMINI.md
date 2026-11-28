@@ -496,7 +496,10 @@ These rules apply globally across ALL projects, workspaces, and coding sessions 
 ## 5. Pre-Execution Change Preview Protocol (Mandatory Approval Gate)
 - **MANDATORY PREVIEW & APPROVAL EVERY TIME**: Before modifying, creating, or deleting ANY file(s), changing DB schemas/APIs, or installing dependencies across ANY project (including single-file updates and bug fixes, unless the user explicitly instructs to apply changes immediately without asking):
   1. State a concise preview: **Target Files**, **What Will Change** (1–3 bullets), and **Purpose**.
-  2. Pause and ask: *"Reply `1` to create a detailed plan first, or `2` to proceed directly with these changes."* and wait for user confirmation before altering any file on disk.
+  2. Pause and ask:
+     `1. Plan`
+     `2. Proceed Directly`
+     and wait for user confirmation before altering any file on disk.
 
 ---
 

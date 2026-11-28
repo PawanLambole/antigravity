@@ -96,4 +96,5 @@ If no issues are found in a category, state that it passed verification cleanly.
 ## Step 5: Mandatory Decision Gate
 After presenting the complete audit report, **STOP without editing any files** and ask the user:
 
-> **"I have listed all visual, functional, and implementation issues found in this page/component. Reply `1` to create a detailed plan to fix these issues, or `2` to proceed directly with the fixes."**
+> **1. Plan**
+> **2. Proceed Directly**
